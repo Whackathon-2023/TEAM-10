@@ -48,7 +48,7 @@ jobs:
             - name: Build
               run: |
                   cd web_app
-                  pnpm run build --if-present
+                  pnpm run build
 
             - name: Upload artifact for deployment job
               uses: actions/upload-artifact@v2
