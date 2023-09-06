@@ -21,12 +21,9 @@ jobs:
               with:
                   node-version: "18.x"
 
-            - name: change directory
-              run: |
-                  cd web_app
-
             - name: npm install, build, and test
               run: |
+                  cd web_app
                   npm install
                   npm run build --if-present
                   npm run test --if-present
