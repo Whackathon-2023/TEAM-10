@@ -18,17 +18,32 @@ const tankSchema = z.object({
   serialNumber: z.coerce.number().positive({
     message: "Serial number must be a positive number",
   }),
-  dateTime: z.string().datetime({ message: "Invalid date" }),
+  dateTime: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/)
+    .refine(
+      (value) => {
+        const parsedDate = new Date(value);
+        return !isNaN(parsedDate.getTime());
+      },
+      {
+        message: "Invalid date and time format",
+      },
+    ),
   delivery: z.coerce
     .number()
     .positive({ message: "Delivery must be a positive number" })
     .int({ message: "Delivery must be an integer" })
     .min(1, { message: "Delivery must be at least 1" })
     .max(100000, { message: "Delivery cannot exceed 100,000" }),
+  customerName: z.string().nonempty({ message: "Customer name is required" }),
 });
 
+const tanksListSchema = z.array(tankSchema);
+
 const tanksSchema = z.object({
-  tanks: z.array(tankSchema),
+  tank: tankSchema,
+  tanks: tanksListSchema.optional(),
 });
 
 const Home = () => {
@@ -42,10 +57,16 @@ const Home = () => {
   });
 
   // 2. Define a submit handler.
-  const onSubmit = (values: z.infer<typeof tanksSchema>) => {
+  const onSubmit = ({ tank, tanks }: z.infer<typeof tanksSchema>) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    if (tanks && tanks.length > 0 && Array.isArray(tanks)) {
+      const tank_list = tanksListSchema.parse([tank, ...tanks]);
+      console.log(tank_list);
+    } else {
+      const tank_list = tanksListSchema.parse([tank]);
+      console.log(tank_list);
+    }
   };
 
   return (
@@ -56,12 +77,166 @@ const Home = () => {
         </h1>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <div className="mb-4 rounded border border-gray-300 p-4">
+              <h3 className="text-xl font-semibold text-gray-800">Tank 1</h3>
+              <div className="mb-2 mt-2">
+                <FormField
+                  control={form.control}
+                  name="tank.name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="tanks.name">Tank Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Tank A" {...field} type="text" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="mb-2">
+                <FormField
+                  control={form.control}
+                  name="tank.serialNumber"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="tanks.serialNumber">
+                        Tank Serial Number
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder="1234567" {...field} type="number" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="mb-2">
+                <FormField
+                  control={form.control}
+                  name="tank.dateTime"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="tank.dateTime">
+                        Date and Time
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Time"
+                          {...field}
+                          type="dateTime-local"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="mb-2">
+                <FormField
+                  control={form.control}
+                  name="tank.delivery"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="tanks.delivery">Liters</FormLabel>
+                      <FormControl>
+                        <Input placeholder="1000" {...field} type="number" />
+                      </FormControl>
+                      {/* <FormDescription>
+                        The amount of liquid fertilizer
+                      </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="mb-2">
+                <FormField
+                  control={form.control}
+                  name="tank.customerName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="tanks.customerName">
+                        Customer Name
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="John Smith"
+                          {...field}
+                          type="text"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
             {fields.map((field, index) => (
               <div
                 key={field.id}
                 className="mb-4 rounded border border-gray-300 p-4"
               >
-                <h3>Tank {index + 1}</h3>
+                <h3>Tank {index + 2}</h3>
+                <div className="mb-2 mt-2">
+                  <FormField
+                    control={form.control}
+                    name={`tanks.${index}.name`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor={`tanks.${index}.name`}>
+                          Tank Name
+                        </FormLabel>
+                        <FormControl>
+                          <Input placeholder="Tank A" {...field} type="text" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="mb-2">
+                  <FormField
+                    control={form.control}
+                    name={`tanks.${index}.serialNumber`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor={`tanks.${index}.serialNumber`}>
+                          Tank Serial Number
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="1234567"
+                            {...field}
+                            type="number"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="mb-2">
+                  <FormField
+                    control={form.control}
+                    name={`tanks.${index}.dateTime`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor={`tanks.${index}.dateTime`}>
+                          Date and Time
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Time"
+                            {...field}
+                            type="dateTime-local"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
                 <div className="mb-2">
                   <FormField
                     control={form.control}
@@ -77,6 +252,27 @@ const Home = () => {
                         <FormDescription>
                           The amount of liquid fertilizer
                         </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="mb-2">
+                  <FormField
+                    control={form.control}
+                    name={`tanks.${index}.customerName`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor={`tanks.${index}.customerName`}>
+                          Customer Name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="John Smith"
+                            {...field}
+                            type="text"
+                          />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -101,6 +297,7 @@ const Home = () => {
                   serialNumber: 0,
                   dateTime: "",
                   delivery: 0,
+                  customerName: "",
                 });
               }}
               className="rounded bg-blue-500 text-white"
