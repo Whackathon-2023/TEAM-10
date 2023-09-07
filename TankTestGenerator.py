@@ -1,10 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[19]:
 
 
 import json
+import time
+from datetime import datetime, timedelta
+import math
+
+
+def Formatted_Print(json_objects):
+    print(json.dumps(json_objects, indent=4))
+    return
+
+
+def Save_Formatted_File(json_objects, file_name):
+    with open(file_name, "w") as json_file:
+        json.dump(json_objects, json_file, indent=4)
+    return
+
 
 def Generate_Configuration():
     all_configuration_items = {}
@@ -92,27 +107,25 @@ def Generate_Configuration():
             "leakHeight": "0.5",
             "rateUnit": "Minute",
             "rateValue": "10",
-            "leakDuration": "24"  
+            "leakDurationInHours": "24"  
         },
         {
             "tankSerialNumber": "33435",
             "leakHeight": "0",
             "rateUnit": "Minute",
             "rateValue": "65",
-            "leakDuration": "16"  
+            "leakDurationInHours": "16"  
         },
         {
             "tankSerialNumber": "33261",
             "leakHeight": "0.75",
             "rateUnit": "Hour",
             "rateValue": "170",
-            "leakDuration": "24"  
+            "leakDurationInHours": "24"  
         }
     ]
     all_configuration_items["LEAKAGE_SCENARIO"] = leakage_scenario_configuration
-    
-    with open(file_path, "w") as json_file:
-        json.dump(all_configuration_items, json_file)
+    return all_configuration_items
 
 
 def Load_Configuration():
@@ -121,26 +134,14 @@ def Load_Configuration():
     return data
 
 
-
-file_path = "all_configuration_items.json"
-Generate_Configuration()
+file_name = "all_configuration_items.json"
+all_configuration_items = Generate_Configuration()
+Save_Formatted_File(all_configuration_items, file_name)
 all_configuration_items = Load_Configuration()
-
 #Formatted_Print(all_configuration_items)
 
 
-# In[ ]:
-
-
-import time
-from datetime import datetime, timedelta
-import math
-
-
-def Formatted_Print(json_objects):
-    formatted_json = json.dumps(json_objects, indent=4)
-    print(formatted_json)
-    return
+# In[20]:
 
 
 def Simulate_Constant_Readings(selected_tank_information, current_time):
@@ -223,10 +224,11 @@ def Simulate_Delivery_Scenario():
 
 
 delivery_scenario_readings = Simulate_Delivery_Scenario()
+Save_Formatted_File(delivery_scenario_readings, 'delivery_scenario_readings.json')
 #Formatted_Print(delivery_scenario_readings)
 
 
-# In[ ]:
+# In[21]:
 
 
 def Simulate_Delivery_Usage_Scenario():
@@ -306,7 +308,7 @@ def Simulate_Delivery_Usage_Scenario():
                     rate_value = rate_value * 60
                 
                 number_of_hours_needed = math.ceil(litres_to_fill / rate_value)
-                reading_time = round(float(activity_start_date_time.timestamp()), 1)
+                #reading_time = round(float(activity_start_date_time.timestamp()), 1)
                 
                 for i in range(number_of_hours_needed):
                     
@@ -317,7 +319,7 @@ def Simulate_Delivery_Usage_Scenario():
                     updated_litres += litres_filled
                     updated_tank_level = round(updated_litres / (tank_area_m2 * 1000), 8)
                     
-                    reading_time = reading_time + (i * 60 * 60) 
+                    reading_time = round(float(activity_start_date_time.timestamp()), 1) + (i * 60 * 60) 
                     last_reading_date_time = datetime.fromtimestamp(reading_time)
 
                     one_reading = {
@@ -373,19 +375,77 @@ def Simulate_Delivery_Usage_Scenario():
             
 
 delivery_usage_scenario_readings = Simulate_Delivery_Usage_Scenario()
+Save_Formatted_File(delivery_usage_scenario_readings, 'delivery_usage_scenario_readings.json')
 #Formatted_Print(delivery_usage_scenario_readings)
 
 
-# In[ ]:
+# In[22]:
 
 
 def Simulate_Leakage_Scenario():
 
     tank_information = all_configuration_items['TANK_INFORMATION']
-    delivery_usage_scenario = all_configuration_items['DELIVERY_USAGE_SCENARIO']
+    leakage_scenario = all_configuration_items['LEAKAGE_SCENARIO']
     read_configuration = all_configuration_items['READING_CONFIGURATION']
     max_reading_frequency = int(read_configuration['maxHoursBetweenReadings'])
     min_reading_frequency = int(read_configuration['minHoursBetweenReadings'])
     leakage_scenario_readings = []
     
+    # Get the current timestamp in epoch format
+    current_time = round(float(time.time()), 1)
+
+    
+    for one_scenario in leakage_scenario:
+        tank_readings = []
+        tank_serial_number = one_scenario['tankSerialNumber']
+        leak_height = float(one_scenario['leakHeight'])
+        rate_unit = one_scenario['rateUnit']
+        rate_value = float(one_scenario['rateValue'])
+        leak_duration_in_hours = int(one_scenario['leakDurationInHours'])
+        
+        if rate_unit == 'Minute':
+            rate_value = rate_value * 60
+        
+        # Get the tank details
+        selected_tank_information = [tank for tank in tank_information if tank["tankSerialNumber"] == tank_serial_number][0]
+        # Start with full tank
+        tank_area_m2 = float(selected_tank_information['tankAreaM2'])
+        updated_litres = float(selected_tank_information['tankCapacity'])
+        updated_tank_level = round(updated_litres / (tank_area_m2 * 1000), 8)
+        
+        reading_time = current_time - (leak_duration_in_hours * 60 * 60)
+        
+        for i in range(leak_duration_in_hours):
+            one_reading = {
+                "tankName": selected_tank_information["tankName"],
+                "tankSerialNumber": tank_serial_number,
+                "telemetryDatetimeEpoch": reading_time,
+                "tankLevel": updated_tank_level,
+                "tankCustomerName": selected_tank_information["tankCustomerName"]
+            }
+            tank_readings.append(one_reading)
+            
+            # If the current tank level is higher than leak height then let it leak
+            if updated_tank_level > leak_height:
+                updated_litres -= rate_value
+                updated_tank_level = round(updated_litres / (tank_area_m2 * 1000), 8)
+                reading_time = reading_time + (60 * 60)
+            else:
+                break
+        
+        leakage_scenario_readings.extend(tank_readings)
+    
+    return leakage_scenario_readings
+
+
+        
+leakage_scenario_readings = Simulate_Leakage_Scenario()
+#Formatted_Print(leakage_scenario_readings)
+Save_Formatted_File(leakage_scenario_readings, 'leakage_scenario_readings.json')
+
+
+# In[ ]:
+
+
+
 
