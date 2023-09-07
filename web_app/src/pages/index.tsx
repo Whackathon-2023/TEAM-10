@@ -97,7 +97,7 @@ const Home = () => {
   return (
     <LayoutGroup>
       <AnimatePresence>
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
+        <div className="ml-16 flex min-h-screen items-center justify-center">
           <div>
             <h1 className="text-2xl font-semibold text-gray-800">
               Generate test data
@@ -105,11 +105,11 @@ const Home = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="max-w-6xl space-y-8 overflow-x-auto rounded bg-white p-8 shadow-md"
+                className="w-auto max-w-6xl space-y-8 overflow-x-auto rounded bg-white p-8"
               >
                 <div className="flex flex-row gap-x-8">
                   <motion.div {...animations}>
-                    <Card className="h-full">
+                    <Card className="h-full shadow-md">
                       <CardHeader>
                         <CardTitle>Tank 1</CardTitle>
                       </CardHeader>
@@ -224,7 +224,7 @@ const Home = () => {
                   </motion.div>
                   {fields.map((field, index) => (
                     <motion.div key={field.id} {...animations}>
-                      <Card>
+                      <Card className="shadow-md">
                         <CardHeader>
                           <CardTitle>Tank {index + 2}</CardTitle>
                         </CardHeader>
@@ -362,7 +362,7 @@ const Home = () => {
                     // className="mb-4 flex items-center justify-center rounded border border-gray-300 p-10"
                   >
                     <Card
-                      className="flex h-full items-center justify-center"
+                      className="flex h-full items-center justify-center shadow-md"
                       ref={lastItemRef}
                     >
                       <CardContent>
