@@ -6,17 +6,23 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
+  type ChartOptions,
 } from "chart.js";
+import { cn } from "~/lib/utils";
 
 interface LiquidLevelChartProps {
+  className?: string;
   title: string;
   data: number[];
 }
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
-const LiquidLevelChart = ({ title, data }: LiquidLevelChartProps) => {
+const LiquidLevelChart = ({
+  className,
+  title,
+  data,
+}: LiquidLevelChartProps) => {
   const maxLevel = 20000;
 
   const chartData = {
@@ -35,11 +41,14 @@ const LiquidLevelChart = ({ title, data }: LiquidLevelChartProps) => {
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"bar"> = {
     plugins: {
       title: {
         display: true,
         text: title,
+      },
+      tooltip: {
+        filter: (tooltipItem) => tooltipItem.datasetIndex === 0,
       },
     },
     scales: {
@@ -58,7 +67,7 @@ const LiquidLevelChart = ({ title, data }: LiquidLevelChartProps) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg">
+    <div className={cn("mx-auto w-full max-w-lg", className)}>
       <Bar data={chartData} options={options} />
     </div>
   );
