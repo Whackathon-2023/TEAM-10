@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Tank A",
+        "serialNumber": 12313,
+        "dateTime": "2023-09-07T18:55",
+        "delivery": 123,
+        "customerName": "John"
+    },
+    {
+        "name": "Tank B",
+        "serialNumber": 3456435,
+        "dateTime": "2023-09-07T20:55",
+        "delivery": 2323,
+        "customerName": "Smith"
+    }
+]

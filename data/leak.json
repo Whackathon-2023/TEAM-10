@@ -1,0 +1,9 @@
+{
+    "name": "Tank A",
+    "serialNumber": 3434343,
+    "dateTime": "2023-09-07T19:00",
+    "leakRate": 100,
+    "leakDuration": 5,
+    "leakHeight": 2,
+    "customerName": "John Smith"
+}
