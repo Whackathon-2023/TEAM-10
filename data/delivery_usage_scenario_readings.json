@@ -1,0 +1,611 @@
+[
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693440000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693461600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693483200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693504800.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693526400.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693548000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693569600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693591200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693612800.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693634400.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693656000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693677600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.2165088,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693702800.0,
+        "tankLevel": 0.37889039,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693706400.0,
+        "tankLevel": 0.54127199,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693710000.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693731600.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693753200.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693774800.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693796400.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693800000.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693810800.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693832400.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693854000.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693875600.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693897200.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693904400.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank F",
+        "tankSerialNumber": "33063",
+        "telemetryDatetimeEpoch": 1693908000.0,
+        "tankLevel": 0.12687415,
+        "tankCustomerName": "Steve and Mike"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693440000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693461600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693483200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693504800.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693526400.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693548000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693569600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693591200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693612800.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693634400.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693656000.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693677600.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.0541272,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.2165088,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693702800.0,
+        "tankLevel": 0.37889039,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693706400.0,
+        "tankLevel": 0.54127199,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693710000.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693731600.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693753200.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693774800.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693796400.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693800000.0,
+        "tankLevel": 0.60384303,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693810800.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693832400.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693854000.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693875600.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693897200.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693904400.0,
+        "tankLevel": 0.42820027,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank D",
+        "tankSerialNumber": "33435",
+        "telemetryDatetimeEpoch": 1693908000.0,
+        "tankLevel": 0.12687415,
+        "tankCustomerName": "Dave and Elon"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693440000.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693461600.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693483200.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693504800.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693526400.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693548000.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693569600.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693591200.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693612800.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693634400.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693656000.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693677600.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.09078529,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693699200.0,
+        "tankLevel": 0.36314117,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693702800.0,
+        "tankLevel": 0.63549705,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693706400.0,
+        "tankLevel": 0.90785293,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693710000.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693731600.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693753200.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693774800.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693796400.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693800000.0,
+        "tankLevel": 1.01280073,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693810800.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693832400.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693854000.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693875600.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693897200.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693904400.0,
+        "tankLevel": 0.71820245,
+        "tankCustomerName": "Josh and Co"
+    },
+    {
+        "tankName": "Tank Q",
+        "tankSerialNumber": "33261",
+        "telemetryDatetimeEpoch": 1693908000.0,
+        "tankLevel": 0.21280073,
+        "tankCustomerName": "Josh and Co"
+    }
+]

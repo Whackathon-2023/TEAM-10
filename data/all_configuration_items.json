@@ -1,0 +1,92 @@
+{
+    "READING_CONFIGURATION": {
+        "minHoursBetweenReadings": "1",
+        "maxHoursBetweenReadings": "6",
+        "daysOfConstantReadings": "3",
+        "litresOfConstantReadings": "1000"
+    },
+    "TANK_INFORMATION": [
+        {
+            "tankCustomerName": "Steve and Mike",
+            "tankName": "Tank F",
+            "tankSerialNumber": "33063",
+            "tankAreaM2": "18.475",
+            "tankCapacity": "42000"
+        },
+        {
+            "tankCustomerName": "Dave and Elon",
+            "tankName": "Tank D",
+            "tankSerialNumber": "33435",
+            "tankAreaM2": "18.475",
+            "tankCapacity": "60000"
+        },
+        {
+            "tankCustomerName": "Josh and Co",
+            "tankName": "Tank Q",
+            "tankSerialNumber": "33261",
+            "tankAreaM2": "11.015",
+            "tankCapacity": "25000"
+        }
+    ],
+    "DELIVERY_SCENARIO": [
+        {
+            "tankSerialNumber": "33063",
+            "deliveryLitres": "10500"
+        },
+        {
+            "tankSerialNumber": "33435",
+            "deliveryLitres": "15245"
+        },
+        {
+            "tankSerialNumber": "33261",
+            "deliveryLitres": "17350"
+        }
+    ],
+    "DELIVERY_USAGE_SCENARIO": [
+        {
+            "dayNumber": "1",
+            "activity": "Delivery",
+            "litres": "10156",
+            "startTime": "08:00",
+            "rateUnit": "Hour",
+            "rateValue": "3000"
+        },
+        {
+            "dayNumber": "2",
+            "activity": "Usage",
+            "litres": "3245",
+            "startTime": "12:00",
+            "endTime": "15:00"
+        },
+        {
+            "dayNumber": "3",
+            "activity": "Usage",
+            "litres": "5567",
+            "startTime": "17:00",
+            "endTime": "18:00"
+        }
+    ],
+    "LEAKAGE_SCENARIO": [
+        {
+            "tankSerialNumber": "33063",
+            "leakHeight": "0.5",
+            "rateUnit": "Minute",
+            "rateValue": "10",
+            "leakDurationInHours": "24"
+        },
+        {
+            "tankSerialNumber": "33435",
+            "leakHeight": "0",
+            "rateUnit": "Minute",
+            "rateValue": "65",
+            "leakDurationInHours": "16"
+        },
+        {
+            "tankSerialNumber": "33261",
+            "leakHeight": "0.75",
+            "rateUnit": "Hour",
+            "rateValue": "170",
+            "leakDurationInHours": "24"
+        }
+    ]
+}
