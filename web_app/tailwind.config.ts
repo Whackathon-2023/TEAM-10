@@ -1,8 +1,17 @@
 import { type Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    colors: {
+      primary: "#3D4756",
+      grey: {
+        light: "#D1D1D1",
+        dark: "#6C727F",
+      },
+      ...colors,
+    },
     container: {
       center: true,
       padding: "2rem",
