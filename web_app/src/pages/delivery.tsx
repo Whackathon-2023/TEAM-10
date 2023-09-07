@@ -22,6 +22,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { useEffect, useRef } from "react";
+import TypographyH1 from "~/components/typography/h1";
 
 const tankSchema = z.object({
   name: z.string().nonempty({ message: "Tank name is required" }),
@@ -99,22 +100,22 @@ const Delivery = () => {
       <AnimatePresence>
         <div className="ml-16 flex min-h-screen items-center justify-center">
           <div>
-            <h1 className="text-6xl font-semibold text-gray-800">
+            <TypographyH1 className="text-6xl font-semibold text-gray-800">
               Delivery Scenario
-            </h1>
+            </TypographyH1>
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="max-w-screen-lg space-y-8 overflow-x-auto rounded bg-white p-8"
+                className="max-w-screen-lg space-y-8 overflow-x-auto rounded bg-white py-8"
               >
                 <div className="flex flex-row justify-between gap-x-8">
                   <motion.div {...animations}>
-                    <Card className="h-full w-full shadow-md">
+                    <Card className="h-full w-full min-w-max shadow-md">
                       <CardHeader>
                         <CardTitle>Tank 1</CardTitle>
                       </CardHeader>
-                      <CardContent>
-                        <div className="mb-2 mt-2">
+                      <CardContent className="grid grid-cols-2 gap-10">
+                        <div>
                           <FormField
                             control={form.control}
                             name="tank.name"
@@ -135,7 +136,7 @@ const Delivery = () => {
                             )}
                           />
                         </div>
-                        <div className="mb-2">
+                        <div>
                           <FormField
                             control={form.control}
                             name="tank.serialNumber"
@@ -156,7 +157,7 @@ const Delivery = () => {
                             )}
                           />
                         </div>
-                        <div className="mb-2">
+                        <div>
                           <FormField
                             control={form.control}
                             name="tank.dateTime"
@@ -177,7 +178,7 @@ const Delivery = () => {
                             )}
                           />
                         </div>
-                        <div className="mb-2">
+                        <div>
                           <FormField
                             control={form.control}
                             name="tank.delivery"
@@ -198,7 +199,7 @@ const Delivery = () => {
                             )}
                           />
                         </div>
-                        <div className="mb-2">
+                        <div>
                           <FormField
                             control={form.control}
                             name="tank.customerName"
@@ -224,12 +225,12 @@ const Delivery = () => {
                   </motion.div>
                   {fields.map((field, index) => (
                     <motion.div key={field.id} {...animations}>
-                      <Card className="shadow-md">
+                      <Card className="min-w-max shadow-md">
                         <CardHeader>
                           <CardTitle>Tank {index + 2}</CardTitle>
                         </CardHeader>
-                        <CardContent>
-                          <div className="mb-2 mt-2">
+                        <CardContent className="grid grid-cols-2 gap-10">
+                          <div>
                             <FormField
                               control={form.control}
                               name={`tanks.${index}.name`}
@@ -250,7 +251,7 @@ const Delivery = () => {
                               )}
                             />
                           </div>
-                          <div className="mb-2">
+                          <div>
                             <FormField
                               control={form.control}
                               name={`tanks.${index}.serialNumber`}
@@ -273,7 +274,7 @@ const Delivery = () => {
                               )}
                             />
                           </div>
-                          <div className="mb-2">
+                          <div>
                             <FormField
                               control={form.control}
                               name={`tanks.${index}.dateTime`}
@@ -296,7 +297,7 @@ const Delivery = () => {
                               )}
                             />
                           </div>
-                          <div className="mb-2">
+                          <div>
                             <FormField
                               control={form.control}
                               name={`tanks.${index}.delivery`}
@@ -319,7 +320,7 @@ const Delivery = () => {
                               )}
                             />
                           </div>
-                          <div className="mb-2">
+                          <div>
                             <FormField
                               control={form.control}
                               name={`tanks.${index}.customerName`}
