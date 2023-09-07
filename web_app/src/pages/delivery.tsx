@@ -80,10 +80,10 @@ const Delivery = () => {
     // ✅ This will be type-safe and validated.
     if (tanks && tanks.length > 0 && Array.isArray(tanks)) {
       const tank_list = tanksListSchema.parse([tank, ...tanks]);
-      console.log(tank_list);
+      console.log(JSON.stringify(tank_list));
     } else {
       const tank_list = tanksListSchema.parse([tank]);
-      console.log(tank_list);
+      console.log(JSON.stringify(tank_list));
     }
   };
 
@@ -380,7 +380,7 @@ const Delivery = () => {
                               customerName: "",
                             });
                           }}
-                          className="bg-primary rounded-full text-white"
+                          className="rounded-full bg-primary text-white"
                         >
                           Add Tank
                         </Button>
@@ -389,7 +389,7 @@ const Delivery = () => {
                   </motion.div>
                 </div>
                 <Button
-                  className="bg-primary sticky bottom-0 left-0 rounded-full text-white"
+                  className="sticky bottom-0 left-0 rounded-full bg-primary text-white"
                   type="submit"
                 >
                   Generate

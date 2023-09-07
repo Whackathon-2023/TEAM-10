@@ -155,7 +155,7 @@ const Home = () => {
   const onSubmit = (value: z.infer<typeof tankLeakSchema>) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(value);
+    console.log(JSON.stringify(value));
   };
 
   return (
@@ -492,7 +492,7 @@ const Home = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel htmlFor="usage3_endDateTime">
-                              End Date and Time of Usage 3
+                              End Date & Time
                             </FormLabel>
                             <FormControl>
                               <Input
@@ -511,7 +511,7 @@ const Home = () => {
               </div>
             </div>
             <Button
-              className="bg-primary sticky bottom-0 left-0 rounded-full text-white"
+              className="sticky bottom-0 left-0 rounded-full bg-primary text-white"
               type="submit"
             >
               Generate

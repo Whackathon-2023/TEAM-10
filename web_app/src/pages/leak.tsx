@@ -71,7 +71,7 @@ const Home = () => {
   const onSubmit = (value: z.infer<typeof tankLeakSchema>) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(value);
+    console.log(JSON.stringify(value));
   };
 
   return (
@@ -241,7 +241,7 @@ const Home = () => {
               </div>
             </div>
             <Button
-              className="bg-primary sticky bottom-0 left-0 rounded-full text-white"
+              className="sticky bottom-0 left-0 rounded-full bg-primary text-white"
               type="submit"
             >
               Generate
