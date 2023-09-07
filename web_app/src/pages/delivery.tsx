@@ -115,6 +115,7 @@ const Delivery = () => {
                         <CardTitle>Tank 1</CardTitle>
                       </CardHeader>
                       <CardContent className="grid grid-cols-2 gap-10">
+                        <hr className="col-span-2 border-t border-gray-200" />
                         <div>
                           <FormField
                             control={form.control}
@@ -230,6 +231,7 @@ const Delivery = () => {
                           <CardTitle>Tank {index + 2}</CardTitle>
                         </CardHeader>
                         <CardContent className="grid grid-cols-2 gap-10">
+                          <hr className="col-span-2 border-t border-gray-200" />
                           <div>
                             <FormField
                               control={form.control}

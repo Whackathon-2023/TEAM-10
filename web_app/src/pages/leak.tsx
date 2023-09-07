@@ -92,6 +92,7 @@ const Home = () => {
                     <CardTitle>Leaky Tank</CardTitle>
                   </CardHeader>
                   <CardContent className="grid grid-cols-2 gap-10">
+                    <hr className="col-span-2 border-t border-gray-200" />
                     <div className="">
                       <FormField
                         control={form.control}
