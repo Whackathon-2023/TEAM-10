@@ -197,7 +197,8 @@ def Simulate_Delivery_Scenario(delivery_scenario):
     current_time = round(float(time.time()), 1)
     tank_information = all_configuration_items['TANK_INFORMATION']
     
-    if delivery_scenario is null:    delivery_scenario = all_configuration_items['DELIVERY_SCENARIO']
+    if delivery_scenario is null:    
+        delivery_scenario = all_configuration_items['DELIVERY_SCENARIO']
     
     delivery_scenario_readings = []
     
@@ -234,9 +235,6 @@ def Simulate_Delivery_Scenario(delivery_scenario):
 #delivery_scenario_readings = Simulate_Delivery_Scenario()
 #Save_Formatted_File(delivery_scenario_readings, 'delivery_scenario_readings.json')
 
-
-
-# In[21]:
 
 
 def Simulate_Delivery_Usage_Scenario():
@@ -382,12 +380,9 @@ def Simulate_Delivery_Usage_Scenario():
 
             
 
-delivery_usage_scenario_readings = Simulate_Delivery_Usage_Scenario()
-Save_Formatted_File(delivery_usage_scenario_readings, 'delivery_usage_scenario_readings.json')
+#delivery_usage_scenario_readings = Simulate_Delivery_Usage_Scenario()
+#Save_Formatted_File(delivery_usage_scenario_readings, 'delivery_usage_scenario_readings.json')
 #Formatted_Print(delivery_usage_scenario_readings)
-
-
-# In[22]:
 
 
 def Simulate_Leakage_Scenario():
@@ -447,13 +442,7 @@ def Simulate_Leakage_Scenario():
 
 
         
-leakage_scenario_readings = Simulate_Leakage_Scenario()
+#leakage_scenario_readings = Simulate_Leakage_Scenario()
 #Formatted_Print(leakage_scenario_readings)
-Save_Formatted_File(leakage_scenario_readings, 'leakage_scenario_readings.json')
-
-
-# In[ ]:
-
-
-
+#Save_Formatted_File(leakage_scenario_readings, 'leakage_scenario_readings.json')
 
