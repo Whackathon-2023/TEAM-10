@@ -213,13 +213,14 @@ const Delivery = () => {
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel htmlFor="tank.dateTime">
-                                  Date and Time
+                                  Date & Time
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder="Time"
                                     {...field}
                                     type="dateTime-local"
+                                    max={new Date().toISOString().slice(0, 16)}
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -377,13 +378,16 @@ const Delivery = () => {
                                   <FormLabel
                                     htmlFor={`tanks.${index}.dateTime`}
                                   >
-                                    Date and Time
+                                    Date & Time
                                   </FormLabel>
                                   <FormControl>
                                     <Input
                                       placeholder="Time"
                                       {...field}
                                       type="dateTime-local"
+                                      max={new Date()
+                                        .toISOString()
+                                        .slice(0, 16)}
                                     />
                                   </FormControl>
                                   <FormMessage />
