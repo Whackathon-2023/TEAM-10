@@ -9,11 +9,23 @@ import {
   type ChartOptions,
 } from "chart.js";
 import { cn } from "~/lib/utils";
+import { z } from "zod";
+
+const TankDataSchema = z.object({
+  tankName: z.string(),
+  tankSerialNumber: z.string(),
+  telemetryDatetimeEpoch: z.number(),
+  tankLevel: z.number(),
+  tankCustomerName: z.string(),
+});
+
+// Define the type for your TankData
+type TankData = z.infer<typeof TankDataSchema>;
 
 interface LiquidLevelChartProps {
   className?: string;
   title: string;
-  data: number[];
+  tankData: TankData[];
 }
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
@@ -21,21 +33,26 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 const LiquidLevelChart = ({
   className,
   title,
-  data,
+  tankData,
 }: LiquidLevelChartProps) => {
-  const maxLevel = 20000;
+  const maxLevel = 60000;
+  const tankAreaM2 = 18.475;
+
+  const data = tankData.map(
+    (tankData) => tankData.tankLevel * tankAreaM2 * 1000,
+  );
 
   const chartData = {
     labels: data.map((_, index) => `Time ${index + 1}`),
     datasets: [
       {
         data: data,
-        backgroundColor: data.map(() => "lightblue"),
+        backgroundColor: data.map(() => "darkblue"),
         borderWidth: 1,
       },
       {
         data: data.map((_) => maxLevel),
-        backgroundColor: data.map(() => "gray"),
+        backgroundColor: data.map(() => "lightgray"),
         borderWidth: 1,
       },
     ],
