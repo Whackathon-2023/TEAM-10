@@ -193,7 +193,7 @@ const Home = () => {
                                 placeholder="Time"
                                 {...field}
                                 type="dateTime-local"
-                                max={new Date().toISOString().slice(0, 16)}
+                                // max={new Date().toISOString().slice(0, 16)}
                               />
                             </FormControl>
                             <FormMessage />
