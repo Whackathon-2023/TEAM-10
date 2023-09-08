@@ -24,14 +24,14 @@ import {
 import TypographyH1 from "~/components/typography/h1";
 
 const tankLeakSchema = z.object({
-  name: z.string().nonempty({ message: "Tank name is required" }),
-  serialNumber: z.coerce.number().positive({
+  tankName: z.string().nonempty({ message: "Tank name is required" }),
+  tankSerialNumber: z.coerce.number().positive({
     message: "Serial number must be a positive number",
   }),
-  area: z.coerce.number().positive({
+  tankAreaM2: z.coerce.number().positive({
     message: "Area must be a positive number",
   }),
-  maxCapacity: z.coerce.number().positive({
+  tankCapacity: z.coerce.number().positive({
     message: "Capacity must be a positive number",
   }),
   dateTime: z
@@ -63,7 +63,9 @@ const tankLeakSchema = z.object({
     .int({ message: "Leak height must be an integer" })
     .min(0, { message: "Leak height must be at least 1" })
     .max(100000, { message: "Leak height cannot exceed 100,000" }),
-  customerName: z.string().nonempty({ message: "Customer name is required" }),
+  tankCustomerName: z
+    .string()
+    .nonempty({ message: "Customer name is required" }),
 });
 
 const Home = () => {
@@ -101,10 +103,10 @@ const Home = () => {
                     <div className="">
                       <FormField
                         control={form.control}
-                        name="name"
+                        name="tankName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="name">Tank Name</FormLabel>
+                            <FormLabel htmlFor="tankName">Tank Name</FormLabel>
                             <FormControl>
                               <Input
                                 placeholder="Tank A"
@@ -120,10 +122,10 @@ const Home = () => {
                     <div className="">
                       <FormField
                         control={form.control}
-                        name="serialNumber"
+                        name="tankSerialNumber"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="serialNumber">
+                            <FormLabel htmlFor="tankSerialNumber">
                               Tank Serial Number
                             </FormLabel>
                             <FormControl>
@@ -141,10 +143,12 @@ const Home = () => {
                     <div>
                       <FormField
                         control={form.control}
-                        name="area"
+                        name="tankAreaM2"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="area">Tank Area M2</FormLabel>
+                            <FormLabel htmlFor="tankAreaM2">
+                              Tank Area M2
+                            </FormLabel>
                             <FormControl>
                               <Input
                                 placeholder="18.75"
@@ -160,10 +164,10 @@ const Home = () => {
                     <div>
                       <FormField
                         control={form.control}
-                        name="maxCapacity"
+                        name="tankCapacity"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="maxCapacity">
+                            <FormLabel htmlFor="tankCapacity">
                               Tank Max Capacity
                             </FormLabel>
                             <FormControl>
@@ -264,10 +268,10 @@ const Home = () => {
                     <div className="">
                       <FormField
                         control={form.control}
-                        name="customerName"
+                        name="tankCustomerName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel htmlFor="tanks.customerName">
+                            <FormLabel htmlFor="tanks.tankCustomerName">
                               Customer Name
                             </FormLabel>
                             <FormControl>
