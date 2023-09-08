@@ -26,16 +26,17 @@ interface LiquidLevelChartProps {
   className?: string;
   title: string;
   tankData: TankData[];
+  maxLevel: number;
 }
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const LiquidLevelChart = ({
   className,
+  maxLevel,
   title,
   tankData,
 }: LiquidLevelChartProps) => {
-  const maxLevel = 60000;
   const tankAreaM2 = 18.475;
 
   const labels = tankData.map((tankData) =>
