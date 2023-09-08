@@ -28,6 +28,12 @@ const tankLeakSchema = z.object({
   serialNumber: z.coerce.number().positive({
     message: "Serial number must be a positive number",
   }),
+  area: z.coerce.number().positive({
+    message: "Area must be a positive number",
+  }),
+  maxCapacity: z.coerce.number().positive({
+    message: "Capacity must be a positive number",
+  }),
   dateTime: z
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/)
@@ -124,6 +130,46 @@ const Home = () => {
                             <FormControl>
                               <Input
                                 placeholder="1234567"
+                                {...field}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    <div>
+                      <FormField
+                        control={form.control}
+                        name="area"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="area">Tank Area M2</FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="18.75"
+                                {...field}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    <div>
+                      <FormField
+                        control={form.control}
+                        name="maxCapacity"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="maxCapacity">
+                              Tank Max Capacity
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="20000"
                                 {...field}
                                 type="number"
                               />

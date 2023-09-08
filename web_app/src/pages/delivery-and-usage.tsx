@@ -29,6 +29,12 @@ const tankLeakSchema = z.object({
     message: "Serial number must be a positive number",
   }),
   customerName: z.string().nonempty({ message: "Customer name is required" }),
+  area: z.coerce.number().positive({
+    message: "Area must be a positive number",
+  }),
+  maxCapacity: z.coerce.number().positive({
+    message: "Capacity must be a positive number",
+  }),
   delivery: z.coerce
     .number()
     .positive({ message: "Delivery must be a positive number" })
@@ -238,6 +244,48 @@ const Home = () => {
                         )}
                       />
                     </div>
+                    <hr className="col-span-3 border-t border-gray-200" />
+                    <div>
+                      <FormField
+                        control={form.control}
+                        name="area"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="area">Tank Area M2</FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="18.75"
+                                {...field}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    <div>
+                      <FormField
+                        control={form.control}
+                        name="maxCapacity"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="maxCapacity">
+                              Tank Max Capacity
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="20000"
+                                {...field}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    <div></div>
                     <hr className="col-span-3 border-t border-gray-200" />
                     <div className="">
                       <FormField

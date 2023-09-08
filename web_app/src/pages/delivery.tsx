@@ -29,6 +29,12 @@ const tankSchema = z.object({
   serialNumber: z.coerce.number().positive({
     message: "Serial number must be a positive number",
   }),
+  area: z.coerce.number().positive({
+    message: "Area must be a positive number",
+  }),
+  maxCapacity: z.coerce.number().positive({
+    message: "Capacity must be a positive number",
+  }),
   dateTime: z
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/)
@@ -161,6 +167,48 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
+                            name="tank.area"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel htmlFor="tanks.area">
+                                  Tank Area M2
+                                </FormLabel>
+                                <FormControl>
+                                  <Input
+                                    placeholder="18.75"
+                                    {...field}
+                                    type="number"
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                        <div>
+                          <FormField
+                            control={form.control}
+                            name="tank.maxCapacity"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel htmlFor="tanks.maxCapacity">
+                                  Tank Max Capacity
+                                </FormLabel>
+                                <FormControl>
+                                  <Input
+                                    placeholder="20000"
+                                    {...field}
+                                    type="number"
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                        <div>
+                          <FormField
+                            control={form.control}
                             name="tank.dateTime"
                             render={({ field }) => (
                               <FormItem>
@@ -279,6 +327,50 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
+                              name={`tanks.${index}.area`}
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel htmlFor={`tanks.${index}.area`}>
+                                    Tank Area M2
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Input
+                                      placeholder="18.75"
+                                      {...field}
+                                      type="number"
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                          <div>
+                            <FormField
+                              control={form.control}
+                              name={`tanks.${index}.maxCapacity`}
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel
+                                    htmlFor={`tanks.${index}.maxCapacity`}
+                                  >
+                                    Tank Max Capacity
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Input
+                                      placeholder="20000"
+                                      {...field}
+                                      type="number"
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                          <div>
+                            <FormField
+                              control={form.control}
                               name={`tanks.${index}.dateTime`}
                               render={({ field }) => (
                                 <FormItem>
@@ -375,6 +467,8 @@ const Delivery = () => {
                             append({
                               name: "",
                               serialNumber: 0,
+                              area: 0,
+                              maxCapacity: 0,
                               dateTime: "",
                               delivery: 0,
                               customerName: "",
