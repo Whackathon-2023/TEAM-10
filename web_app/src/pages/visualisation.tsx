@@ -74,8 +74,8 @@ const Visualisation = () => {
 
   return (
     <>
-      <div className="mt-20 min-h-screen w-auto lg:ml-32 xl:ml-44 2xl:ml-72">
-        <TypographyH1 className="mb-24 max-w-lg text-center text-6xl font-semibold text-grey-dark">
+      <div className="mt-10 min-h-screen w-auto lg:ml-32 xl:ml-44 2xl:ml-72">
+        <TypographyH1 className="mb-16 max-w-lg text-center text-6xl font-semibold text-grey-dark">
           Liquid Level Chart
         </TypographyH1>
         <div>
@@ -123,7 +123,7 @@ const Visualisation = () => {
             tankData.length > 0 &&
             tankData[0] && (
               <LiquidLevelChart
-                className="h-full w-full"
+                className="h-full w-[2500px]"
                 key={tankData[0].tankSerialNumber}
                 title={`${tankData[0].tankName} (${tankData[0].tankSerialNumber}) - ${tankData[0].tankCustomerName}`}
                 tankData={tankData}
