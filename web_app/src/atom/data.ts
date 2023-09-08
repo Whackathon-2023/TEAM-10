@@ -12,4 +12,6 @@ const TankDataSchema = z.object({
 // Define the type for your TankData
 type TankData = z.infer<typeof TankDataSchema>;
 
-export const panelAtom = atom<TankData[]>([]);
+export const TanksDataSchema = z.array(TankDataSchema);
+
+export const apiDataAtom = atom<TankData[]>([]);
