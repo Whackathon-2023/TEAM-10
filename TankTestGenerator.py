@@ -21,6 +21,27 @@ def Save_Formatted_File(json_objects, file_name):
     return
 
 
+def Load_Configuration():
+    with open(file_path, "r") as json_file:
+        data = json.load(json_file)
+    return data
+
+
+file_name = "all_configuration_items.json"
+Save_Formatted_File(all_configuration_items, file_name)
+all_configuration_items = Load_Configuration()
+#Formatted_Print(all_configuration_items)
+
+
+# In[20]:
+
+
+import json
+import time
+from datetime import datetime, timedelta
+import math
+
+
 def Generate_Configuration():
     all_configuration_items = {}
     
@@ -127,21 +148,7 @@ def Generate_Configuration():
     all_configuration_items["LEAKAGE_SCENARIO"] = leakage_scenario_configuration
     return all_configuration_items
 
-
-def Load_Configuration():
-    with open(file_path, "r") as json_file:
-        data = json.load(json_file)
-    return data
-
-
-file_name = "all_configuration_items.json"
 all_configuration_items = Generate_Configuration()
-Save_Formatted_File(all_configuration_items, file_name)
-all_configuration_items = Load_Configuration()
-#Formatted_Print(all_configuration_items)
-
-
-# In[20]:
 
 
 def Simulate_Constant_Readings(selected_tank_information, current_time):
@@ -184,12 +191,13 @@ def Simulate_Constant_Readings(selected_tank_information, current_time):
 
 
 
-def Simulate_Delivery_Scenario():
+def Simulate_Delivery_Scenario(delivery_scenario):
     
     # Get the current timestamp in epoch format
     current_time = round(float(time.time()), 1)
     tank_information = all_configuration_items['TANK_INFORMATION']
-    delivery_scenario = all_configuration_items['DELIVERY_SCENARIO']
+    
+    if delivery_scenario is null:    delivery_scenario = all_configuration_items['DELIVERY_SCENARIO']
     
     delivery_scenario_readings = []
     
@@ -223,9 +231,9 @@ def Simulate_Delivery_Scenario():
     return delivery_scenario_readings
 
 
-delivery_scenario_readings = Simulate_Delivery_Scenario()
-Save_Formatted_File(delivery_scenario_readings, 'delivery_scenario_readings.json')
-#Formatted_Print(delivery_scenario_readings)
+#delivery_scenario_readings = Simulate_Delivery_Scenario()
+#Save_Formatted_File(delivery_scenario_readings, 'delivery_scenario_readings.json')
+
 
 
 # In[21]:
