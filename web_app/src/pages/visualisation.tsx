@@ -1,7 +1,9 @@
 import LiquidLevelChart from "~/components/chart/bar";
 import TypographyH1 from "~/components/typography/h1";
 import { z } from "zod";
-import rawTanksData from "~/data/delivery_scenario_readings.json";
+// import rawTanksData from "~/data/delivery_scenario_readings.json";
+import rawTanksData from "~/data/delivery_usage_scenario_readings.json";
+// import rawTanksData from "~/data/leakage_scenario_readings.json";
 
 const TankDataSchema = z.object({
   tankName: z.string(),
@@ -38,20 +40,24 @@ const tankDataGroups: TankData[][] = Object.values(
   tankDataBySerialNumber,
 ).filter((group) => group !== undefined);
 
-console.log(tankDataGroups);
-
 const Visualisation = () => {
-  const liquidLevelData: number[] = [
-    1000, 1000, 1000, 12000, 12000, 12000, 12000, 12000, 12000, 12000,
-  ];
-
   return (
     <>
-      <div className="mt-32 min-h-screen w-auto lg:ml-32 xl:ml-44 2xl:ml-72">
-        <TypographyH1 className="mb-56 max-w-lg text-center text-6xl font-semibold text-grey-dark">
+      <div className="mt-20 min-h-screen w-auto lg:ml-32 xl:ml-44 2xl:ml-72">
+        <TypographyH1 className="mb-24 max-w-lg text-center text-6xl font-semibold text-grey-dark">
           Liquid Level Chart
         </TypographyH1>
-        <LiquidLevelChart title="Tank 1" data={liquidLevelData} />
+        {tankDataGroups.map(
+          (tankData) =>
+            tankData.length > 0 &&
+            tankData[0] && (
+              <LiquidLevelChart
+                key={tankData[0].tankSerialNumber}
+                title={`${tankData[0].tankName} (${tankData[0].tankSerialNumber}) - ${tankData[0].tankCustomerName}`}
+                tankData={tankData}
+              />
+            ),
+        )}
       </div>
     </>
   );
