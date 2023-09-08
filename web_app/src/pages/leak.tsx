@@ -60,9 +60,8 @@ const tankLeakSchema = z.object({
     .max(100000, { message: "Leak duration cannot exceed 100,000" }),
   leakHeight: z.coerce
     .number()
-    .positive({ message: "Leak height must be a positive number" })
     .int({ message: "Leak height must be an integer" })
-    .min(1, { message: "Leak height must be at least 1" })
+    .min(0, { message: "Leak height must be at least 1" })
     .max(100000, { message: "Leak height cannot exceed 100,000" }),
   customerName: z.string().nonempty({ message: "Customer name is required" }),
 });
