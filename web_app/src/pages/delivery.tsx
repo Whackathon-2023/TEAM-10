@@ -23,6 +23,8 @@ import {
 } from "~/components/ui/card";
 import { useEffect, useRef } from "react";
 import TypographyH1 from "~/components/typography/h1";
+import { useAtom } from "jotai";
+import { TanksDataSchema, apiDataAtom } from "~/atom/data";
 
 const tankSchema = z.object({
   tankName: z.string().nonempty({ message: "Tank name is required" }),
@@ -66,6 +68,7 @@ const tanksSchema = z.object({
 });
 
 const Delivery = () => {
+  const [apiData, setApiData] = useAtom(apiDataAtom);
   // 1. Define your form.
   const form = useForm<z.infer<typeof tanksSchema>>({
     resolver: zodResolver(tanksSchema),
@@ -93,7 +96,9 @@ const Delivery = () => {
         .then((response) => response.json())
         .then((data) => {
           // Update the Jotai atom with the fetched data
-          console.log(data);
+          const parsedData = TanksDataSchema.parse(data);
+          console.log(parsedData);
+          setApiData(parsedData);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -105,7 +110,9 @@ const Delivery = () => {
         .then((response) => response.json())
         .then((data) => {
           // Update the Jotai atom with the fetched data
-          console.log(data);
+          const parsedData = TanksDataSchema.parse(data);
+          console.log(parsedData);
+          setApiData(parsedData);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);

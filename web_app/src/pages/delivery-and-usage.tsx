@@ -22,6 +22,8 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import TypographyH1 from "~/components/typography/h1";
+import { useAtom } from "jotai";
+import { TanksDataSchema, apiDataAtom } from "~/atom/data";
 
 const tankLeakSchema = z.object({
   tankName: z.string().nonempty({ message: "Tank name is required" }),
@@ -154,6 +156,8 @@ const tankLeakSchema = z.object({
 });
 
 const Home = () => {
+  const [apiData, setApiData] = useAtom(apiDataAtom);
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof tankLeakSchema>>({
     resolver: zodResolver(tankLeakSchema),
@@ -164,6 +168,17 @@ const Home = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(JSON.stringify(value));
+    fetch("/api/delivery_usage")
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the Jotai atom with the fetched data
+        const parsedData = TanksDataSchema.parse(data);
+        console.log(parsedData);
+        setApiData(parsedData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   };
 
   return (
