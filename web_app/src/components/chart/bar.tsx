@@ -38,12 +38,16 @@ const LiquidLevelChart = ({
   const maxLevel = 60000;
   const tankAreaM2 = 18.475;
 
+  const labels = tankData.map((tankData) =>
+    new Date(tankData.telemetryDatetimeEpoch).toLocaleString(),
+  );
+
   const data = tankData.map(
     (tankData) => tankData.tankLevel * tankAreaM2 * 1000,
   );
 
   const chartData = {
-    labels: data.map((_, index) => `Time ${index + 1}`),
+    labels: labels,
     datasets: [
       {
         data: data,
@@ -71,6 +75,12 @@ const LiquidLevelChart = ({
     scales: {
       x: {
         stacked: true,
+        ticks: {
+          callback: (value, index, values) => {
+            // Shorten the label for display on the chart
+            return value;
+          },
+        },
       },
       y: {
         beginAtZero: true,
