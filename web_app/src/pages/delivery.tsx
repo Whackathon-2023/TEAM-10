@@ -89,9 +89,27 @@ const Delivery = () => {
     if (tanks && tanks.length > 0 && Array.isArray(tanks)) {
       const tank_list = tanksListSchema.parse([tank, ...tanks]);
       console.log(JSON.stringify(tank_list));
+      fetch("/api/delivery")
+        .then((response) => response.json())
+        .then((data) => {
+          // Update the Jotai atom with the fetched data
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     } else {
       const tank_list = tanksListSchema.parse([tank]);
       console.log(JSON.stringify(tank_list));
+      fetch("/api/delivery")
+        .then((response) => response.json())
+        .then((data) => {
+          // Update the Jotai atom with the fetched data
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     }
   };
 
