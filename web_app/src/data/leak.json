@@ -1,9 +1,11 @@
 {
-    "name": "Tank A",
-    "serialNumber": 3434343,
-    "dateTime": "2023-09-07T19:00",
-    "leakRate": 100,
-    "leakDuration": 5,
-    "leakHeight": 2,
-    "customerName": "John Smith"
+  "name": "Tank A",
+  "serialNumber": 12321313,
+  "area": 18.75,
+  "maxCapacity": 20000,
+  "dateTime": "2023-09-08T08:13",
+  "leakRate": 1000,
+  "leakDuration": 2,
+  "leakHeight": 0,
+  "customerName": "John"
 }

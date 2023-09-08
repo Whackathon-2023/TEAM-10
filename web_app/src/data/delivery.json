@@ -1,16 +1,20 @@
 [
-    {
-        "name": "Tank A",
-        "serialNumber": 12313,
-        "dateTime": "2023-09-07T18:55",
-        "delivery": 123,
-        "customerName": "John"
-    },
-    {
-        "name": "Tank B",
-        "serialNumber": 3456435,
-        "dateTime": "2023-09-07T20:55",
-        "delivery": 2323,
-        "customerName": "Smith"
-    }
+  {
+    "name": "Tank A",
+    "serialNumber": 223232,
+    "area": 18.75,
+    "maxCapacity": 20000,
+    "dateTime": "2023-09-08T11:08",
+    "delivery": 1000,
+    "customerName": "John"
+  },
+  {
+    "name": "Tank B",
+    "serialNumber": 23232,
+    "area": 10,
+    "maxCapacity": 1000,
+    "dateTime": "2023-09-08T11:08",
+    "delivery": 2000,
+    "customerName": "Smith"
+  }
 ]
