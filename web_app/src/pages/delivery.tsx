@@ -25,14 +25,14 @@ import { useEffect, useRef } from "react";
 import TypographyH1 from "~/components/typography/h1";
 
 const tankSchema = z.object({
-  name: z.string().nonempty({ message: "Tank name is required" }),
-  serialNumber: z.coerce.number().positive({
+  tankName: z.string().nonempty({ message: "Tank name is required" }),
+  tankSerialNumber: z.coerce.number().positive({
     message: "Serial number must be a positive number",
   }),
-  area: z.coerce.number().positive({
+  tankAreaM2: z.coerce.number().positive({
     message: "Area must be a positive number",
   }),
-  maxCapacity: z.coerce.number().positive({
+  tankCapacity: z.coerce.number().positive({
     message: "Capacity must be a positive number",
   }),
   dateTime: z
@@ -47,13 +47,15 @@ const tankSchema = z.object({
         message: "Invalid date and time format",
       },
     ),
-  delivery: z.coerce
+  deliveryLitres: z.coerce
     .number()
     .positive({ message: "Delivery must be a positive number" })
     .int({ message: "Delivery must be an integer" })
     .min(1, { message: "Delivery must be at least 1" })
     .max(100000, { message: "Delivery cannot exceed 100,000" }),
-  customerName: z.string().nonempty({ message: "Customer name is required" }),
+  tankCustomerName: z
+    .string()
+    .nonempty({ message: "Customer name is required" }),
 });
 
 const tanksListSchema = z.array(tankSchema);
@@ -125,10 +127,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.name"
+                            name="tank.tankName"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.name">
+                                <FormLabel htmlFor="tanks.tankName">
                                   Tank Name
                                 </FormLabel>
                                 <FormControl>
@@ -146,10 +148,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.serialNumber"
+                            name="tank.tankSerialNumber"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.serialNumber">
+                                <FormLabel htmlFor="tanks.tankSerialNumber">
                                   Tank Serial Number
                                 </FormLabel>
                                 <FormControl>
@@ -167,10 +169,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.area"
+                            name="tank.tankAreaM2"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.area">
+                                <FormLabel htmlFor="tanks.tankAreaM2">
                                   Tank Area M2
                                 </FormLabel>
                                 <FormControl>
@@ -188,10 +190,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.maxCapacity"
+                            name="tank.tankCapacity"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.maxCapacity">
+                                <FormLabel htmlFor="tanks.tankCapacity">
                                   Tank Max Capacity
                                 </FormLabel>
                                 <FormControl>
@@ -231,10 +233,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.delivery"
+                            name="tank.deliveryLitres"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.delivery">
+                                <FormLabel htmlFor="tanks.deliveryLitres">
                                   Liters
                                 </FormLabel>
                                 <FormControl>
@@ -252,10 +254,10 @@ const Delivery = () => {
                         <div>
                           <FormField
                             control={form.control}
-                            name="tank.customerName"
+                            name="tank.tankCustomerName"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel htmlFor="tanks.customerName">
+                                <FormLabel htmlFor="tanks.tankCustomerName">
                                   Customer Name
                                 </FormLabel>
                                 <FormControl>
@@ -284,10 +286,12 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.name`}
+                              name={`tanks.${index}.tankName`}
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel htmlFor={`tanks.${index}.name`}>
+                                  <FormLabel
+                                    htmlFor={`tanks.${index}.tankName`}
+                                  >
                                     Tank Name
                                   </FormLabel>
                                   <FormControl>
@@ -305,11 +309,11 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.serialNumber`}
+                              name={`tanks.${index}.tankSerialNumber`}
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel
-                                    htmlFor={`tanks.${index}.serialNumber`}
+                                    htmlFor={`tanks.${index}.tankSerialNumber`}
                                   >
                                     Tank Serial Number
                                   </FormLabel>
@@ -328,10 +332,12 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.area`}
+                              name={`tanks.${index}.tankAreaM2`}
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel htmlFor={`tanks.${index}.area`}>
+                                  <FormLabel
+                                    htmlFor={`tanks.${index}.tankAreaM2`}
+                                  >
                                     Tank Area M2
                                   </FormLabel>
                                   <FormControl>
@@ -349,11 +355,11 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.maxCapacity`}
+                              name={`tanks.${index}.tankCapacity`}
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel
-                                    htmlFor={`tanks.${index}.maxCapacity`}
+                                    htmlFor={`tanks.${index}.tankCapacity`}
                                   >
                                     Tank Max Capacity
                                   </FormLabel>
@@ -398,11 +404,11 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.delivery`}
+                              name={`tanks.${index}.deliveryLitres`}
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel
-                                    htmlFor={`tanks.${index}.delivery`}
+                                    htmlFor={`tanks.${index}.deliveryLitres`}
                                   >
                                     Liters
                                   </FormLabel>
@@ -421,11 +427,11 @@ const Delivery = () => {
                           <div>
                             <FormField
                               control={form.control}
-                              name={`tanks.${index}.customerName`}
+                              name={`tanks.${index}.tankCustomerName`}
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel
-                                    htmlFor={`tanks.${index}.customerName`}
+                                    htmlFor={`tanks.${index}.tankCustomerName`}
                                   >
                                     Customer Name
                                   </FormLabel>
@@ -469,13 +475,13 @@ const Delivery = () => {
                           type="button"
                           onClick={() => {
                             append({
-                              name: "",
-                              serialNumber: 0,
-                              area: 0,
-                              maxCapacity: 0,
+                              tankName: "",
+                              tankSerialNumber: 0,
+                              tankAreaM2: 0,
+                              tankCapacity: 0,
                               dateTime: "",
-                              delivery: 0,
-                              customerName: "",
+                              deliveryLitres: 0,
+                              tankCustomerName: "",
                             });
                           }}
                           className="rounded-full bg-primary text-white"
