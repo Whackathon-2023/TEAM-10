@@ -192,6 +192,16 @@ import json
 
 
 class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        result = Simulate_Delivery_Scenario(None)
+        response_data = {"result": result}
+        response_json = json.dumps(response_data)
+
+        self.send_response(200)
+        self.send_header("Content-type", "application/json")
+        self.end_headers()
+        self.wfile.write(response_json.encode("utf-8"))
+
     def do_POST(self):
         content_length = int(self.headers["Content-Length"])
         post_data = self.rfile.read(content_length)
